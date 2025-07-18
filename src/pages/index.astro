@@ -1,21 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import VehicleCard from '../components/VehicleCard.astro'; // remove
-//add example to display vehicles
-import { vehicles } from '../data/vehicles.js'; // Example data source
-
+import { vehicles } from '../data/vehicles.js';
+import VehicleCard from '../components/VehicleCard.astro';
 ---
 
 <Layout>
-	<main>
-		<!-- Card example to display -->
-		<h1>Our Inventory</h1>
-        <div class="vehicle-grid">
-            {vehicles.map(vehicle => (
-                <VehicleCard vehicle={vehicle} />
-            ))}
-        </div>
-	</main>
+	<h1>Welcome to Our Dealership</h1>
+	<div class="vehicle-grid">
+		{vehicles.map(vehicle => (
+			<VehicleCard vehicle={vehicle} />
+		))}
+	</div>
 </Layout>
 
 <style>
@@ -29,5 +24,6 @@ import { vehicles } from '../data/vehicles.js'; // Example data source
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		gap: 1rem;
+		padding-left: 1cap;
 	}
 </style>

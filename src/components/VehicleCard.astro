@@ -1,72 +1,41 @@
 ---
+
+// create object for info for each vehicle
 const { vehicle } = Astro.props;
-/*
-    VehicleCard Component
-    Displays vehicle details including
-    - Image
-    - Condition
-    - Year
-    - Make
-    - Model
-    - VIN
-    - Price
-    - Mileage
-
-    */
-
 
 ---
 <div class="vehicle-card">
-    <img src={vehicle.image} alt={vehicle.name} />
-    <div class="vehicle-details">
-        <h2>{vehicle.condition} {vehicle.year} {vehicle.make} {vehicle.model}</h2>
-        <p>{vehicle.price} mi</p>
-        <p>{vehicle.vin} </p>
-        <p>Price: ${vehicle.price.toLocaleString()}</p>
-    </div>
+    <img src={vehicle.image} alt={vehicle.name} class="vehicle-image" />
+    <h1 class="vehicle-card-title">{vehicle.condition} {vehicle.year} {vehicle.make} {vehicle.model}</h1>
+    <p class="vehicle-card-price">${vehicle.price.toLocaleString()}</p>
+    <p class="vehicle-card-vin">VIN: {vehicle.vin}</p>
+    <p class="vehicle-card-mileage">{vehicle.mileage.toLocaleString()} mi</p>
 </div>
 
 <style>
-        .card {
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        transition: transform 0.2s;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-    }
-    .card-image {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-    }
-    .card-content {
-        padding: 1rem;
-    }
-    .card-title {
-        margin: 0 0 0.5rem;
-        font-size: 1.5rem;
-    }
-    .card-details {
-        margin: 0.25rem 0;
-        color: #555;
-    }
-    .card-price {
-        margin-top: 1rem;
-        font-size: 1.25rem;
-        font-weight: bold;
-        color: #333;
-    }
-    .card-button {
-        display: inline-block;
-        margin-top: 1rem;
-        padding: 0.5rem 1rem;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-        text-align: center;
-    }
+.vehicle-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.vehicle-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+.vehicle-card-title {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+}
+.vehicle-card-price {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+.vehicle-card-vin,
+.vehicle-card-mileage {
+    font-size: 0.875rem;
+    color: #7f8c8d;
+}
 </style>

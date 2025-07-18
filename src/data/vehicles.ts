@@ -7,6 +7,7 @@ export const vehicles = [
         price: 35000,
         vin: "123456789",
         image: "/placeholder.svg",
+        mileage: 78000,
     },
     {
         make: "Honda",
@@ -16,5 +17,6 @@ export const vehicles = [
         price: 25000,
         vin: "987654321",
         image: "/placeholder.svg",
+        mileage: 15000,
     },
 ];
