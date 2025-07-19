@@ -1,11 +1,12 @@
 ---
 // create object for info for each vehicle
 const { vehicle } = Astro.props;
+import { capitalizeFirst } from '../utilities/capitalizeFirst.js';
 
 ---
 <div class="vehicle-card">
     <img src={vehicle.image} alt={vehicle.name} class="vehicle-image" />
-    <h1 class="vehicle-card-title">{vehicle.condition} {vehicle.year} {vehicle.make} {vehicle.model}</h1>
+    <h1 class="vehicle-card-title"> {capitalizeFirst(vehicle.condition)} {vehicle.year} {vehicle.make} {vehicle.model}</h1>
     <p class="vehicle-card-price">${vehicle.price.toLocaleString()}</p>
     <p class="vehicle-card-vin">VIN: {vehicle.vin}</p>
     <p class="vehicle-card-mileage">{vehicle.mileage.toLocaleString()} mi</p>

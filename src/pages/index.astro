@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { vehicles } from '../data/vehicles.js';
 import VehicleCard from '../components/VehicleCard.astro';
+import '../styles/styles.css';
 ---
 
 <Layout>
@@ -12,18 +13,3 @@ import VehicleCard from '../components/VehicleCard.astro';
 		))}
 	</div>
 </Layout>
-
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 120ch;
-	}
-
-	.vehicle-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		gap: 1rem;
-		padding-left: 1cap;
-	}
-</style>
