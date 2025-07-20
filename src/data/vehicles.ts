@@ -16,7 +16,7 @@ export const vehicles = [
         year: 2022,
         price: 25000,
         vin: "987654321",
-        image: "/placeholder.svg",
+        image: "/images/vehicles/987654321.jpg",
         mileage: 15000,
     },
     {
